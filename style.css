@@ -1,0 +1,112 @@
+/* Global already ada di kode kamu */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #000, #111, #0a0a0a);
+  color: #eee;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: left;
+  padding: 80px 20px;
+  background: url('img/yusuf.jpg') center/cover no-repeat;
+}
+.hero h1 { font-size: 42px; margin: 0; }
+.hero span { color: #e11; display: block; margin-top: 8px; font-size: 22px; }
+.btn {
+  display: inline-block;
+  background: #e11;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+/* Section & Grid */
+.section { max-width: 1000px; margin: auto; padding: 60px 20px; }
+.grid { display: grid; gap: 20px; }
+.skills, .projects { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.card {
+  background: rgba(30,30,30,0.8);
+  border: 1px solid #333;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Panel slide-out */
+#panel {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 100%; max-width: 480px;
+  height: 100%;
+  background: #0a0a0a;
+  border-left: 1px solid #333;
+  transition: right 0.4s ease;
+  z-index: 2000;        
+  overflow-y: auto;
+  padding: 20px;
+}
+#panel.open { right: 0; }
+#panel h2 { margin-top: 0; }
+#closePanel { cursor: pointer; float: right; }
+
+/* ===========================
+   MEDIA QUERY UNTUK MOBILE
+=========================== */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero {
+    text-align: center;
+    padding: 60px 10px;
+  }
+  .hero h1 { font-size: 32px; }
+  .hero span { font-size: 18px; }
+  .btn { padding: 8px 14px; font-size: 14px; }
+  .section { padding: 40px 10px; }
+  .grid.skills, .grid.projects { grid-template-columns: 1fr; }
+  #panel {
+    width: 100%;
+    max-width: 100%;
+  }
+}
