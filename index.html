@@ -3,174 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yusuf Febrian Shiddiq — S1 Teknik Komputer</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Yusuf Febrian Shiddiq — Portfolio</title>
   <style>
+    /* === Global Style === */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #000, #111, #0a0a0a);
-      color: #eee;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to right, #0a0a0a, #1a1a1a);
+      color: #f2f2f2;
     }
+
     header {
-      position: sticky;
-      top: 0;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #222;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 24px;
-      z-index: 1000;
-    }
-    header a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: 500;
-    }
-    .hero {
-      position: relative;
-      text-align: left;
-      padding: 80px 20px;
-      background: url('img/yusuf.jpg') center/cover no-repeat;
-    }
-    .hero h1 { font-size: 42px; margin: 0; }
-    .hero span { color: #e11; display: block; margin-top: 8px; font-size: 22px; }
-    .btn {
-      display: inline-block;
-      background: #e11;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 12px;
-      margin-top: 20px;
-      text-decoration: none;
-    }
-    .section { max-width: 1000px; margin: auto; padding: 60px 20px; }
-    .grid { display: grid; gap: 20px; }
-    .skills, .projects { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .card {
-      background: rgba(30,30,30,0.8);
-      border: 1px solid #333;
-      padding: 16px;
-      border-radius: 16px;
-    }
-    footer {
-      border-top: 1px solid #333;
+      background: #b30000;
+      padding: 20px;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #aaa;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
     }
-    /* Panel slide-out */
-    #panel {
-      position: fixed;
-      top: 0; right: -100%;
-      width: 100%; max-width: 480px;
-      height: 100%;
-      background: #0a0a0a;
-      border-left: 1px solid #333;
-      transition: right 0.4s ease;
-      z-index: 2000;
-      overflow-y: auto;
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
       padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
-    #panel.open { right: 0; }
-    #panel h2 { margin-top: 0; }
-    #closePanel { cursor: pointer; float: right; }
+
+    .card {
+      background: #141414;
+      border: 2px solid #b30000;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(179,0,0,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255,0,0,0.8);
+    }
+
+    .card h2 {
+      color: #ff3333;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .card p, .card ul {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      background: #0d0d0d;
+      padding: 15px;
+      margin-top: 30px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div><strong>Yusuf Febrian Shiddiq  </strong></div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">Tentang</a>
-      <a href="#skills">Skill</a>
-      <a href="#projects">Project</a>
-      <a href="#contact">Kontak</a>
-      <a href="javascript:void(0)" onclick="openPanel()">Buka Panel</a>
-    </nav>
-  </header>
 
-  <section class="hero" id="home">
-    <h1>Yusuf Febrian Shiddiq</h1>
-    <span>Streamer & Mahasiswa — Telkom University</span>
-    <p>Fokus di Matdis, C Programming, dan streaming Roblox, Minecraft dan Valorant.</p>
-    <a href="#projects" class="btn">Lihat Project</a>
-    <a href="https://linktr.ee/yusuffebrianshiddiq" target="_blank" class="btn" style="background:#333;">Linktree</a>
-  </section>
+  <header>Yusuf Febrian Shiddiq</header>
 
-  <section id="about" class="section">
-    <h2>Tentang Saya</h2>
-    <p>Mahasiswa Teknik Komputer yang senang ngulik UI, optimasi stream, dan troubleshooting perangkat. Di waktu senggang bikin overlay dan intro buat kanal sendiri.</p>
-    <ul>
-      <li>Platform: YouTube, TikTok, Instagram</li>
-      <li>Fokus: C, Kalkulus 2, Matdis</li>
-      <li>Rig: Victus 16 RTX 4060 • Ryzen 5 8645HS</li>
-      <li>Gaya: Clean</li>
-    </ul>
-  </section>
-
-  <section id="skills" class="section">
-    <h2>Skill & Tools</h2>      
-    <div class="grid skills">
-      <div class="card">C / Algoritma</div>
-      <div class="card">Kalkulus & Diskrit</div>
-      <div class="card">Streaming (CDID, Roblox)</div>
-      <div class="card">Video Intro & Overlay</div>
-      <div class="card">UI Clean</div>
-      <div class="card">Tech Support Windows/Linux</div>
+  <div class="container">
+    <div class="card">
+      <h2>Tentang Saya</h2>
+      <p>Halo! Saya Yusuf, seorang mahasiswa Teknik Komputer di Telkom University. Saya memiliki ketertarikan di bidang pemrograman, teknologi, dan streaming game.</p>
     </div>
-  </section>
 
-  <section id="projects" class="section">
-    <h2>Project Terbaru</h2>
-    <div class="grid projects">
-      <div class="card"><strong>UCUP RUN DIESEL — Intro Animasi</strong><p>Transisi ke UCUP ROLEPLAY & UCUP CarMeet</p></div>
-      <div class="card"><strong>Overlay Stream — Roblox</strong><p>Tema merah / hitam / abu, layout clean</p></div>
-      <div class="card"><strong>Absensi Mahasiswa (Web)</strong><p>Latihan CRUD + autentikasi sederhana</p></div>
+    <div class="card">
+      <h2>Keahlian</h2>
+      <ul>
+        <li>Bahasa C & Pemrograman Dasar</li>
+        <li>Kalkulus & Matematika Diskrit</li>
+        <li>Desain Web (HTML, CSS, JS)</li>
+        <li>Streaming & Konten Gaming</li>
+      </ul>
     </div>
-  </section>
 
-  <section id="contact" class="section">
-    <h2>Kontak</h2>
-    <p>Siap kolaborasi project, overlay, atau bantuan setup streaming.</p>
-    <form onsubmit="event.preventDefault(); alert('Pesan terkirim (simulasi)');">
-      <input type="text" placeholder="Nama" required style="width:100%;padding:8px;margin:4px 0;">
-      <input type="email" placeholder="Email" required style="width:100%;padding:8px;margin:4px 0;">
-      <textarea placeholder="Pesan" required style="width:100%;padding:8px;margin:4px 0;"></textarea>
-      <button type="submit" class="btn">Kirim</button>
-    </form>
-  </section>
+    <div class="card">
+      <h2>Proyek</h2>
+      <ul>
+        <li>📌 Pemantauan Lingkungan dengan Sensor IoT</li>
+        <li>📌 Streaming Roblox (UCUP Roleplay & CarMeet)</li>
+        <li>📌 Overlay & Intro Animasi untuk konten gaming</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Kontak</h2>
+      <p>📧 Email: yusuffebrianshiddiq@gmail.com</p>
+      <p>📱 Instagram: <a href="https://instagram.com/yusuffebrianshiddiq_">@yusuffebrianshiddiq_</a></p>
+      <p>🎥 YouTube: <a href="https://youtube.com/@LOCxYFSOpti">LOCxYFSOpti</a></p>
+      <p>🎮 TikTok: <a href="https://tiktok.com/@yusuffebrianshiddiq">@yusuffebrianshiddiq</a></p>
+    </div>
+  </div>
 
   <footer>
-    © <span id="year"></span> Yusuf Febrian Shiddiq — All rights reserved.
+    © 2025 Yusuf Febrian Shiddiq — Semua Hak Dilindungi
   </footer>
 
-  <!-- Panel Slide Out -->
-  <aside id="panel">
-    <span id="closePanel">❌</span>
-    <h2>Portofolio Yusuf</h2>
-    <div class="card">UCUP RUN DIESEL Intro Animasi</div>
-    <div class="card">Overlay Stream Roblox</div>
-    <div class="card">Absensi Mahasiswa Web</div>
-    <h3>Link Cepat</h3>
-    <p><a href="https://www.youtube.com/@ucupjagoo" target="_blank">YouTube</a></p>
-    <p><a href="https://www.instagram.com/yusuffebrianshiddiq_/     " target="_blank">Instagram</a></p>
-    <p><a href="https://www.tiktok.com/@yusuffebrianshiddiq_?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></p>
-  </aside>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const panel = document.getElementById('panel');
-    function openPanel(){ panel.classList.add('open'); }
-    document.getElementById('closePanel').onclick = () => panel.classList.remove('open');
-    // Keyboard shortcut: tekan P untuk toggle panel
-    window.addEventListener('keydown', (e)=>{
-      if(e.key.toLowerCase()==='p') panel.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>
